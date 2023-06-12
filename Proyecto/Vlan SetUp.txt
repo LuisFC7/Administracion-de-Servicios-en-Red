@@ -1,0 +1,58 @@
+Configuraciones realizadas para segmento VLAN
+
+ESW1
+conf t
+vlan 10
+name ServicioCliente
+vlan 20 
+name Compras
+exit
+int f1/2
+switchport mode access
+switcport access vlan 10
+int f1/3
+switchport mode access
+switchport access vlan 20
+exit
+int f1/1
+switchport mode trunk
+switchport trunk native vlan 1
+do wr
+
+ESW2
+conf t
+vlan 10
+name ServicioCliente
+vlan 20 
+name Compras
+exit
+int f1/2
+switchport mode access
+switcport access vlan 10
+int f1/3
+switchport mode access
+switchport access vlan 20
+exit
+int f1/1
+switchport mode trunk
+switchport trunk native vlan 1
+do wr
+
+ESW3
+conf t
+vlan 10
+name ServicioCliente
+vlan 20 
+name Compras
+exit
+int f1/2
+switchport mode access
+switcport access vlan 10
+int f1/3
+switchport mode access
+switchport access vlan 20
+exit
+int range f0/1-2
+switchport mode trunk
+switchport native vlan 1
+do wr
